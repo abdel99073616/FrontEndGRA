@@ -6,26 +6,26 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-readonly APIUrl = "http://127.0.0.1:8000"
+readonly APIUrl = "http://127.0.0.1:8000/"
   constructor(private http:HttpClient) { }
 
   /************* Department *****************/
 
 
   getDepList():Observable<any[]>{
-  return this.http.get<any[]>(this.APIUrl + '/dep/');
+  return this.http.get<any[]>(this.APIUrl + 'api/Department/');
   }
 
   addDepart(val:any){
-    return this.http.get<any[]>(this.APIUrl + '/dep/',val);
+    return this.http.get<any[]>(this.APIUrl + 'api/Department/',val);
   }
 
   updateDepart(val:any){
-    return this.http.get<any[]>(this.APIUrl + '/dep/',val);
+    return this.http.get<any[]>(this.APIUrl + 'api/Department/',val);
   }
 
   deleteDepart(val:any){
-    return this.http.get<any[]>(this.APIUrl + '/dep/',val);
+    return this.http.get<any[]>(this.APIUrl + 'api/Department/',val);
   }
 
 /************* Employee *****************/

@@ -9,8 +9,9 @@ import { DepComponent } from './dep/dep.component';
 import { ShowDepComponent } from './dep/show-dep/show-dep.component';
 import { AddEditEmpComponent } from './emp/add-edit-emp/add-edit-emp.component';
 import {SharedService} from './shared.service';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { AddEditDepComponent } from './dep/add-edit-dep/add-edit-dep.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,13 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     DepComponent,
     ShowDepComponent,
     AddEditEmpComponent,
+    AddEditDepComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
