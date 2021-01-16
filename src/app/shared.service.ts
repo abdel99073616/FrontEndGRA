@@ -6,47 +6,32 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-readonly APIUrl = "http://127.0.0.1:8000/"
-  constructor(private http:HttpClient) { }
+  readonly APIUrl = 'http://127.0.0.1:8000/';
+  constructor(private http: HttpClient) { }
 
-  /************* Department *****************/
+  /************* User *****************/
 
-
-  getDepList():Observable<any[]>{
-  return this.http.get<any[]>(this.APIUrl + 'api/Department/');
+  getuser(): Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + 'api/user/');
   }
 
-  addDepart(val:any){
-    return this.http.get<any[]>(this.APIUrl + 'api/Department/',val);
+  // tslint:disable-next-line:typedef
+  adduser(val: any){
+    return this.http.get<any[]>(this.APIUrl + 'api/user/', val);
   }
 
-  updateDepart(val:any){
-    return this.http.get<any[]>(this.APIUrl + 'api/Department/',val);
-  }
-
-  deleteDepart(val:any){
-    return this.http.get<any[]>(this.APIUrl + 'api/Department/',val);
-  }
-
-/************* Employee *****************/
-
-  getEmpList():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl + '/emp/');
-  }
-
-  addEmp(val:any){
-    return this.http.get<any[]>(this.APIUrl + '/emp/',val);
-  }
-
-  updateEmp(val:any){
-    return this.http.get<any[]>(this.APIUrl + '/emp/',val);
+  // tslint:disable-next-line:typedef
+  updateuser(val: any){
+    return this.http.get<any[]>(this.APIUrl + 'api/user/', val);
   }
 
 
-  deleteEmp(val:any){
-    return this.http.get<any[]>(this.APIUrl + '/emp/',val);
+  // tslint:disable-next-line:typedef
+  deleteuser(val: any){
+    return this.http.get<any[]>(this.APIUrl + 'api/user/', val);
   }
-  getEmpListNames():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl + '/emp/');
+  getEmpListuser(): Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + 'api/user/');
   }
+
 }
